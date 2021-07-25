@@ -1,0 +1,52 @@
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdcommenter'
+Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'rust-lang/rust.vim'
+call plug#end()
+
+syntax on
+filetype plugin indent on
+
+set ai
+set si
+set relativenumber
+set backspace=indent,eol,start
+set nohlsearch
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set encoding=utf-8
+set fileencoding=utf-8
+
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
+"scrooloose/syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_auto_jump=0
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_python_checkers=['pylint']
+let g:syntastic_c_checkers=['gcc']
+let g:syntastic_cpp_checkers=['gcc']
+
+"Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType vue,html,css,php EmmetInstall
+let g:user_emmet_leader_key='<C-S>'
