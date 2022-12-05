@@ -1,1 +1,1 @@
-#   esfpi's config file collections
+#   esfpi's .dotfiles collections
